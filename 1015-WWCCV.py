@@ -4,7 +4,7 @@
 # anything that starts with a pound sign (hashtag if you are under 30) is a comment. The computer ignores these.
 
 # Let's tell the world whose awful credit card validator this is.
-print ("Joe Dirt Modified This Credit Card Validator")
+print ("Taron Osifo Modified This Credit Card Validator")
 
 # Let's get the card number from the user
 card_number = input("Enter your 16-digit credit card number: ")
@@ -18,3 +18,16 @@ if len(card_number) == 15 and card_number.isdigit():
     print ("Card is valid.")
 else:
     print ("Invalid card number. It must be 16 digits long.") 
+def run_tests():
+
+    assert is_credit_card_valid("4111111111111111"), '4111111111111111 should pass but did not'
+
+    assert is_credit_card_valid("5105105105105100"), '5105105105105100 should pass but did not'
+
+    assert not is_credit_card_valid("134"), '134 should not pass but did'
+
+    assert not is_credit_card_valid("1234567890123456"), '1234567890123456 should not pass but did'
+
+    assert not is_credit_card_valid("000000000000"), 'This is a bad test and we will get an error message'
+
+run_tests()
